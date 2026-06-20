@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user ={
+            name: "Archana",
+            course:"B.tech",
+            address: {
+                city: " Gorakhpur",
+                state:" uttar pradesh",
+                pincode: 221010
+            },
+
+            roll: 18,
+            semester: 5
+           
+        }
+        console.log(user);
+        let user1 = user;
+        //it is a passingg the refrence
+        user1.name ="Archana";
+        console.log(user);
+        console.log(user1);
+        //shalloe copy
+        let user2={
+            ...user
+        }
+        //problem in shallow copy
+        //inner object or array will pass refrence only
+
+        //Deep copy
+        let temp = JSON.stringify(user);
+        console.log(temp);
+
+        let user3 = JSON.parse (temp);
+        console.log(user3);
+        user.name= "Archu";
+        user.address.city = "Mumbai";
+        console.log(user);
+        console.log(user3);
+
+        let user4 = structuredClone(user);
+        user.name = "Archana Nishad";
+        user.address.city="Agra";
+        console.log(user);
+        console.log(user4);
+
+        //Alias Destructing
+        const {name:fullName}=user;
+        
+        //Default value Destructing
+        const {attendance = false} =user;
+
+        let fees = {
+            total:3000,
+            paid:500,
+            dues:2500,
+        }
+
+        let student ={
+            ...fees,
+            ...user
+        }
+        console.log(student);
+        
+        //safe Access of objects
+        console.log(user?.temporary?.city)
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

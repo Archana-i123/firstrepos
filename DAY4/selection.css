@@ -1,0 +1,13 @@
+#Full{
+    border: 5px solid red;
+}
+   *Desendent Selector */
+   *div p{
+   color: blue;
+   }*
+
+   *child Selector */
+   *outerdiv > .inner{
+    color: red;
+
+/* General sibling Selector (~) */
